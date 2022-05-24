@@ -356,7 +356,7 @@ function flood(c) {
       if(turn <= computerSolution) {
         alert(successMsg);
         document.querySelector('.floodit').style.display = "none";
-        alert("Now work another session to play again");
+        alert("Now work another session to play again. Ready?");
         switchMode('pomodoro');
         stopTimer()
         startTimer();
