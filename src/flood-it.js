@@ -110,12 +110,13 @@ function updateClock() {
     timer.mode === 'pomodoro' ? 'Get back to work!' : 'Take a break!';
   document.title = `${minutes}:${seconds} — ${text}`;
 
-  const progress = document.getElementById('js-progress');
-  progress.value = timer[timer.mode] * 60 - timer.remainingTime.total;
+
+  const progressb = document.getElementById('progessb');
+  progressb.style.width = 100*(timer[timer.mode] * 60 - timer.remainingTime.total)/(timer[timer.mode] * 60 ) +'%'
 }
 
 function switchMode(mode) {
-	alert('Now '+mode)
+	//alert('Now '+mode)
 	
 
 	
@@ -131,9 +132,6 @@ function switchMode(mode) {
     .forEach(e => e.classList.remove('active'));
   document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
   document.body.style.backgroundColor = `var(--${mode})`;
-  document
-    .getElementById('js-progress')
-    .setAttribute('max', timer.remainingTime.total);
 
 
 	updateClock();	
@@ -356,8 +354,9 @@ function flood(c) {
     if(!solved && checkSolved) {
       if(turn <= computerSolution) {
         alert(successMsg);
-        //alert("Now work");
+        alert("Now work another session to play again");
         switchMode('pomodoro');
+        stopTimer()
         startTimer();
       } else {
         alert("Puzzle cleared in " + turn + " moves!");

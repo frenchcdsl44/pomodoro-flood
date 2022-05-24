@@ -12,9 +12,9 @@
   <body>
   
 	 <div class="container">
-
-      <button class="btn btn-default" id="js-btn">Start</button>     
-		<span id="js-minutes">00</span>:<span id="js-seconds">00</span>
+<br>
+      Start a 25 minutes work session to play the game flood it : <button class="btn btn-primary" id="js-btn">Start</button>     
+		<div id="timer"><span id="js-minutes">00</span>:<span id="js-seconds">00</span></div>
 
 		<div id="js-mode-buttons" > 
 			<button class="btn btn-default"  data-mode="pomodoro">pomodoro</button>      
@@ -22,7 +22,10 @@
          <button class="btn btn-default" data-mode="longBreak">Long break</button>  
       </div>
 				     
-		<progress id="js-progress" value="0"></progress>
+<br>
+		<div class="progress">
+		  <div id="progessb" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+		</div>
 		<audio src="audio/waterdrop.mp3" data-sound="pomodoro"></audio>
 		<audio src="audio/spring.mp3" data-sound="shortBreak"></audio>
 		<audio src="audio/spring.mp3" data-sound="longBreak"></audio>
