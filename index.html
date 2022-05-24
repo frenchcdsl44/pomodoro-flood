@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Flood It</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Duncan">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw==" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+  </head>
+  <body>
+  
+	 <div class="container">
+
+      <button class="btn btn-default" id="js-btn">Start</button>     
+		<span id="js-minutes">00</span>:<span id="js-seconds">00</span>
+
+		<div id="js-mode-buttons" > 
+			<button class="btn btn-default"  data-mode="pomodoro">pomodoro</button>      
+         <button class="btn btn-default" data-mode="shortBreak" >Short break!</button>     
+         <button class="btn btn-default" data-mode="longBreak">Long break</button>  
+      </div>
+				     
+		<progress id="js-progress" value="0"></progress>
+		<audio src="audio/waterdrop.mp3" data-sound="pomodoro"></audio>
+		<audio src="audio/spring.mp3" data-sound="shortBreak"></audio>
+		<audio src="audio/spring.mp3" data-sound="longBreak"></audio>
+    </div>
+    <div class="container">
+      <div class="outer"> 
+        <h3>Flood It (<span id="counter">?</span>/<span id="computer-solution" data-toggle="tooltip" title="The computer has solved the puzzle in this many moves. Can you beat it?" data-placement="bottom">?</span>)</h3>
+      </div>
+      <div class="form-group">
+        <table id="grid" border="1"></table>
+      </div>
+      <div class="form-group form-inline">
+       <!-- <button class="btn btn-primary" id="new-game-btn">New Game</button>-->
+        <button class="btn btn-default" id="reset-btn">Reset</button>
+        <button class="btn btn-default" id="solve-btn">Solve for me</button>     
+        </div>
+      <div id="palette"></div>
+    </div>
+
+  
+
+    <!-- scripts -->
+    <script src="src/flood-it.js"></script>
+  </body>
+</html>
