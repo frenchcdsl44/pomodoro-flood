@@ -63,6 +63,7 @@ function startTimer() {
 		let go = true;
       switch (timer.mode) {
         case 'pomodoro':
+        	 document.querySelector('.floodit').style.display = "block";
         	 makeGrid()
           if (timer.sessions % timer.longBreakInterval === 0) {
             switchMode('longBreak');
@@ -354,6 +355,7 @@ function flood(c) {
     if(!solved && checkSolved) {
       if(turn <= computerSolution) {
         alert(successMsg);
+        document.querySelector('.floodit').style.display = "none";
         alert("Now work another session to play again");
         switchMode('pomodoro');
         stopTimer()
